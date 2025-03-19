@@ -1,0 +1,43 @@
+{
+    "settings": {
+        "index.knn": true
+    },
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "long"
+            },
+            "doc_id": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    }
+                }
+            },
+            "chunk_index": {
+                "type": "long"
+            },
+            "chunk": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    }
+                }
+            },
+            "embeddings": {
+                "type": "knn_vector",
+                "dimension": 1536
+            },
+            "created_at": {
+                "type": "text"
+            },
+            "updated_at": {
+                "type": "text"
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+from .task_registry import chunking_embedding_indexing_task

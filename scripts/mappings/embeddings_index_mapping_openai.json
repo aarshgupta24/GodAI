@@ -1,0 +1,43 @@
+{
+    "settings": {
+      "index": {
+        "knn": "true",
+        "knn.algo_param": {
+          "ef_search": "100"
+        }
+      }
+    },
+    "mappings": {
+      "properties": {
+        "embeddings": {
+          "type": "knn_vector",
+          "dimension": 1536,
+          "method": {
+            "engine": "faiss",
+            "space_type": "l2",
+            "name": "hnsw",
+            "parameters": {}
+          }
+        },
+        "doc_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "chunk": {
+          "type": "text"
+        },
+        "chunk_index": {
+          "type": "integer"
+        },
+        "id": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+  
